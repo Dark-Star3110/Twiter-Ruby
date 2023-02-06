@@ -1,0 +1,38 @@
+<!--- strat slider --->
+
+<!--- End slider --->
+<div style="text-align: center;">
+  ==================
+  <h1 style="font-family: billabong">All Members</h1>
+  ==================
+</div>
+<!--- start --->
+<center>
+  <div class="container" id="Blogs">
+  
+    <% @users.each do |user| %>
+        <div class="card-deck">
+          <div class="card" style="max-width: 350px">
+               <img class="card-img-top" src=<%= user.avatar %> alt="Card image cap" height="250px">
+            <div class="card-body">
+             <h5 class="card-title">Name: <%= user.name %> </h5>
+              <h5 class="card-title">Email: <%= user.email %> </h5>
+                <h5 class="card-title">Age: <%= user.age %> </h5>
+            </div>
+            <div class="card-footer">
+            <%= link_to "<span class='badge badge-pill badge-info'style=' background-color:red'>Read More</span>".html_safe,  user_show_url(user.id) %> <br>
+
+              <small class="text-muted">
+                created at <%= user.updated_at.strftime("%d-%m-%Y") %>
+              </small>
+            </div>
+          </div>
+        </div>
+          <% end %>
+    </div>
+          
+</center>
+<!-- for pagination of pages -->
+<br>
+
+

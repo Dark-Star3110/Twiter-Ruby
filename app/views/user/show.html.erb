@@ -1,0 +1,94 @@
+<center>  
+ <h2 style="font-family: billabong">プロフィール</h2>
+
+<p>
+
+            <div class="card" style="max-width: 350px">
+               <img class="card-img-top" src=<%= @users.avatar %> alt="Card image cap" height="250px">
+               </div>
+ 
+</p>
+<h3>名前: </h3>
+<%=@users.name %>
+<h3>年齢 :</h3>
+<%=@users.age %>
+<h3>メールアドレス: </h3>
+<%=@users.email %> 
+</center>
+<center>
+  <div class="container" id="Blogs">
+    <% count = 0 %>
+    <% @blogs.each do |blog| %>
+      <% if count ==0%>
+        <div class="card-deck">
+          <div class="card" style="max-width: 150px">
+            <!-- show formatted data -->
+            <img class="card-img-top" src=<%= blog.image %> alt="Card image cap" height="350px">
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.Title %> </h5>
+              <hr>
+              <p  class="card-text" style="font-size:16px">
+                <%= ActionView::Base.full_sanitizer.sanitize(blog.Discription).truncate_words(20)%> </p>
+            </div>
+            <div class="card-footer">
+              <%= link_to "<span class='badge badge-pill badge-info'style=' background-color:red'>Read More</span>".html_safe,  blog %> <br>
+              <small class="text-muted">Uploaded by <%= blog.email %><br>
+                Last updated <%= blog.updated_at.strftime("%d-%m-%Y") %>
+              </small>
+            </div>
+            <% if admin_signed_in? %>
+              <%= link_to    'edit', edit_blog_path(blog), class:"btn btn-primary" %>
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+            <% end %>
+          </div>
+          <% count += 1%>
+        <% elsif  count  % 3 == 0%>
+        </div>
+        <br>
+        <div class="card-deck">
+          <div class="card" style="max-width: 350px">
+            <!-- show formatted data -->
+            <img class="card-img-top" src=<%=  blog.image %> alt="Card image cap" height="250px">
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.Title %></h5>
+              <hr>
+              <p class="card-text"> <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(30)%></p>
+            </div>
+            <div class="card-footer">
+              <%= link_to "<span class='badge badge-pill badge-info'>Read More</span>".html_safe,  blog %> <br>
+              <small class="text-muted">Uploaded by <%= blog.email %><br>
+                Last updated <%= blog.updated_at.strftime("%d-%m-%Y") %>
+              </small>
+            </div>
+            <!-- Add Edit,Destroy button if login as Admin -->
+            <% if admin_signed_in? %>
+              <%= link_to  'edit', edit_blog_path(blog), class:"btn btn-primary" %>
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+            <% end %>
+          </div>
+          <% count += 1 %> <% else %>
+          <!-- show formatted data -->
+          <div class="card" style="max-width: 350px">
+            <img class="card-img-top" src=<%= blog.image %> alt="Card image cap" height="250px">
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.Title %></h5>
+              <hr>
+              <p class="card-text">  <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(30)%> </p>
+            </div>
+            <div class="card-footer">
+              <%= link_to "<span class='badge badge-pill badge-info'style='background-color:red'>Read More</span>".html_safe,  blog %> <br>
+              <small class="text-muted">Uploaded by <%= blog.email %><br>
+                Last updated <%= blog.updated_at.strftime("%d-%m-%Y") %>
+              </small>
+            </div>
+            <% if admin_signed_in? %>
+              <!-- Add Edit,Destroy button if login as Admin -->
+              <%= link_to 'edit', edit_blog_path(blog), class:"btn btn-primary" %>
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> <% end %>
+          </div>
+          <% count += 1%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</center>
