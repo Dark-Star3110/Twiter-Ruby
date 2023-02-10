@@ -33,17 +33,18 @@
         <ul class="navbar-nav mr-auto">
           <!-- Include link in navbar  -->
           <li class="<%= 'active' if current_page?(pages_home_path) %>  nav-item ">
-            <a class="nav-link" href=<%= pages_home_path%>>All Blog<span class="sr-only">(current)</span>
+            <a class="nav-link" href=<%= pages_home_path%>>NewsFeed<span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="<%= 'active' if current_page?(pages_about_path) %> nav-item">
-            <a class="nav-link" href=<%= pages_about_path%>>About</a>
-          </li>
+          
           <li class="<%= 'active' if current_page?(pages_how_to_write_path) %> nav-item">
-            <a class="nav-link " href=<%= pages_how_to_write_path%>>How To write blog</a>
+            <a class="nav-link " href=<%= pages_how_to_write_path%>>How To Write A Post</a>
           </li>
           <li class="<%= 'active' if current_page?(user_index_path) %> nav-item">
             <a class="nav-link " href=<%= user_index_path%>>Members</a>
+          </li>
+          <li class="<%= 'active' if current_page?(pages_about_path) %> nav-item">
+            <a class="nav-link" href=<%= pages_about_path%>>About</a>
           </li>
           <!-- login as Admin print Admin View -->
           <% if admin_signed_in? %>
@@ -63,7 +64,7 @@
                   <a class="nav-link" style="color: white" href=<%= user_show_url(current_user.id)%>><i class='fab fa-blogger-b'></i> My Profile</a>
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog</a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
-                  <i class="fas fa-plus"></i> Create blog</a>
+                  <i class="fas fa-plus"></i> Create new post</a>
                 <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
             </li>
@@ -76,7 +77,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #68243d;">
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog </a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
-                  <i class="fas fa-plus"></i> Create blog</a>
+                  <i class="fas fa-plus"></i> Create new post</a>
                 <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_admin_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
                </li>
@@ -127,7 +128,7 @@
   <div   class="footer">
   <!-- Navbar content -->
   <center>
-      <label style=" color:blue;"> Developed By チーム5　IT日本語 </label>
+      <label style=" color:blue;"> Developed By チーム７　IT日本語３ </label>
   </center>
 </div>
 </body>

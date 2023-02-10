@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
   get 'pages/home'
 
-  get 'pages/contactus'
+  #get 'pages/contactus'
 
   get 'pages/about'
   

@@ -3,7 +3,7 @@
 <!--- End slider --->
 <div style="text-align: center;">
   ==================
-  <h1 style="font-family: billabong">All Blog</h1>
+  <h1 style="font-family: billabong">All Post</h1>
   ==================
 </div>
 <!--- strat blogs --->
@@ -69,7 +69,7 @@
             </div>
             <div class="card-footer">
               <%= link_to "<span class='badge badge-pill badge-info'style='background-color:red'>Read More</span>".html_safe,  blog %> <br>
-              <small class="text-muted">Uploaded by <%= blog.email %><br>
+              <small class="text-muted">Posted by <%= blog.email %><br>
                 Last updated <%= blog.updated_at.strftime("%d-%m-%Y") %>
               </small>
             </div>
