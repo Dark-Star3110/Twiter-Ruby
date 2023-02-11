@@ -1,3 +1,121 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Variables
+$primary-color: #1DA1F2;
+$secondary-color: #14171A;
+$tertiary-color: #657786;
+
+// Global styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  color: $tertiary-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+// Container styles
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Card styles
+.card {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px 0px #E1E8ED;
+  overflow: hidden;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-outline-info {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  &:hover {
+    background-color: $primary-color;
+    color: #FFFFFF;
+  }
+}
+
+.badge {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $primary-color;
+  color: #FFFFFF;
+}
+
+// Styles for all post heading
+h1 {
+  font-family: 'Billabong';
+  text-align: center;
+}
+
+// Styles for card deck
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+  // Card image styles
+  //.card-img-top {
+  //  height: 250px;
+  //}
+
+  // Card body styles
+  .card-body {
+    h5 {
+      font-weight: bold;
+    }
+    hr {
+      border: 1px solid $secondary-color;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+  // Card footer styles
+  .card-footer {
+    .badge-info {
+      background-color: $primary-color;
+    }
+    small {
+      font-size: 14px;
+      color: $secondary-color;
+      text-align: left;
+    }
+  }
+}
