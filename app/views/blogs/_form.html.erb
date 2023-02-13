@@ -1,4 +1,4 @@
-
+<%= stylesheet_link_tag "blogs" %>
 <%= form_with(model: blog, local: true,:html => { :onsubmit => "return submitForm()" }) do |form| %>
   <% if blog.errors.any? %>
     <div id="error_explanation">
@@ -50,7 +50,7 @@
  
   <div class="actions">
     <!-- submitting an form -->
-   <center><input type="submit" class="btn btn-primary" id = 'submitblog'  value="create post" %></center> 
+   <center><input type="submit" class="btn btn-success" id = 'submitblog'  value="create post" %></center> 
   </div>
 <% end %>
 </div>
