@@ -50,55 +50,22 @@
       </ul>
       <span class="follow">フォロー</span>
       <div class="row gallery">
+      <% @blogs.each do |blog| %>
+        <% if count ==0%>
+        <h1>最近の投稿はありません</h1>
+        <% end %>
+        <% else %>
         <div class="col-md-4 gallery-item">
           <div class="gallery-item_img">
             <img
-              src="https://images.pexels.com/photos/1036371/pexels-photo-1036371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src=<%= blog.image %>
+            alt="Blog Image"
             />
             <h2>View</h2>
           </div>
         </div>
-        <div class="col-md-4 gallery-item">
-          <div class="gallery-item_img">
-            <img
-              src="https://images.pexels.com/photos/861034/pexels-photo-861034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-            <h2>View</h2>
-          </div>
-        </div>
-      <div class="col-md-4 gallery-item">
-        <div class="gallery-item_img">
-          <img
-            src="https://images.pexels.com/photos/113338/pexels-photo-113338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <h2>View</h2>
-        </div>
+        <% end %>
       </div>
-      <div class="col-md-4 gallery-item">
-        <div class="gallery-item_img">
-          <img
-            src="https://images.pexels.com/photos/428431/pexels-photo-428431.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <h2>View</h2>
-        </div>
-      </div>
-      <div class="col-md-4 gallery-item">
-        <div class="gallery-item_img">
-          <img
-            src="https://images.pexels.com/photos/5049/forest-trees-fog-foggy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <h2>View</h2>
-        </div>
-      </div>
-      <div class="col-md-4 gallery-item">
-        <div class="gallery-item_img">
-          <img
-            src="https://images.pexels.com/photos/50859/pexels-photo-50859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          />
-          <h2>View</h2>
-        </div>
-      </div>
-    </div>
   </div>
 </main>
 </div>
