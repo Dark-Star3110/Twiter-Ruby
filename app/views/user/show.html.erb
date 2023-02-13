@@ -11,7 +11,7 @@
         <img
           class="photo"
           src=<%= @users.avatar %>
-          alt="uẻ image"
+          alt="user image"
         />
       </div>
       <h4 class="name"><%=@users.name %></h4>
@@ -50,19 +50,21 @@
       </ul>
       <span class="follow">フォロー</span>
       <div class="row gallery">
-      <% @blogs.each do |blog| %>
-        <% if count ==0%>
-        <h1>最近の投稿はありません</h1>
-        <% end %>
+        <% if @blogs.length() == 0 %>
+        <div class="col-md-12">
+            <h1 style="margin-top:40px;">最近の投稿はありません</h1>
+        </div>
         <% else %>
+      <% @blogs.each do |blog| %>
         <div class="col-md-4 gallery-item">
           <div class="gallery-item_img">
             <img
             src=<%= blog.image %>
             alt="Blog Image"
             />
-            <h2>View</h2>
+            <%= link_to "<h2>ビュー</h2>".html_safe,  blog %> <br>
           </div>
+        <% end %>
         </div>
         <% end %>
       </div>

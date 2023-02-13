@@ -3,43 +3,32 @@
 <!--- strat slider --->
 
 <!--- End slider --->
+<hr/>
 <div style="text-align: center;">
-  ==================
-  <h1 style="font-family: billabong">All Members</h1>
-  ==================
+  <h1 style="font-family: billabong">全会員</h1>
 </div>
+<hr/>
 <!--- start --->
-<center>
   <div class="container" id="Blogs">
-
-    <% @users.each do |user| %>
-      <div class="card">
-      <div class="top-bar">
-        <i class="fa-solid fa-bars"></i>
-        <i class="fa-solid fa-gear"></i>
-      </div>
-      <i class="user-image">
+      <div class="user-container">
+           <% @users.each do |user| %>
+    <div class="user-card">
+      <a class="user-image">
       <img class="card-img-top" src=<%= user.avatar %> alt="Card image cap"/>
       </a>
       <h3><%= user.name %> </h3>
       <p><%= user.email %></p>
-
-      <ul>
-        <i class="fa-brands fa-facebook"></i
-        ><i class="fa-brands fa-instagram"></i
-        ><i class="fa-brands fa-telegram"></i
-        ><i class="fa-brands fa-twitter"></i>
-      </ul>
       <div class="user-box">
-      <%= link_to "<button>Follow</button>".html_safe,  user_show_url(user.id) %> <br>
-        <p>learn more about my profile</p>
+      <%= link_to "<button style='cursor:pointer;'>フォロー</button>".html_safe,  user_show_url(user.id) %> <br>
+        <p>このプロフィールの詳細</p>
         <i class="fa-solid fa-down-long"></i>
       </div>
     </div>
           <% end %>
+      </div>
+
     </div>
 
-</center>
 <!-- for pagination of pages -->
 <br>
 

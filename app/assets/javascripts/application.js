@@ -37,11 +37,6 @@ function submitForm() {
             alert("Enter Discription");
             return false;
         }
-        // check atleast 20 words are present or not
-        else if (getStats('blog_Discription').words <= 20) {
-            alert("Atleast 20 words required");
-            return false;
-        }
         else
         {
         	return true;
