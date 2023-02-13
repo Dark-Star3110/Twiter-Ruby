@@ -1,12 +1,20 @@
-<!-- <%= stylesheet_link_tag "blog" %> -->
-
-<% if user_signed_in? %>
-<script type="text/javascript">
+<%= stylesheet_link_tag "blog" %> <%
+  if user_signed_in? %>
+  <script type="text/javascript">
     window.location.href=<% root_path %>  // put your correct path in a string here
   </script>
-<% else %>
- <script type="text/javascript">
- 	/* redirtct if user not logined */
-    window.location.href="/users/sign_in"  // put your correct path in a string here
+  <% else %>
+  <script type="text/javascript">
+    /* redirtct if user not logined */
+    window.location.href = "/users/sign_in"; // put your correct path in a string here
   </script>
-<% end %>
+  <% end %> } ################################################################
+  #3 vào app/assets/stylesheet/blogs.scss thêm { // Place all the styles related
+  to the blogs controller here. // They will automatically be included in
+  application.css. // You can use Sass (SCSS) here: http://sass-lang.com/
+  .tittle{ color: blue; font-weight: 700; margin-left: 12px; margin-bottom:
+  12px; } /* h1 { padding-top: 15px; font-size: 1.3rem; color: #4B4B4B; }
+  .author { background-color: #9ECAFF; height: 30px; width: 110px;
+  border-radius: 20px; } .author > img { padding-top: 5px; margin-left: 10px;
+  float: left; height: 20px; width: 20px; border-radius: 50%; } */ }
+</div>
