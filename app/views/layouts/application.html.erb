@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag "blogs" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blogs</title>
+    <title>Twitter</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +25,7 @@
     <div class ="nonFooter">
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
       <a class="navbar-brand" href=<%= root_path%>>
-        <img src=<%= image_path "brandlogo.png" %> width="50" height="50" alt="Blogger">
+        <img src=<%= image_path "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4n_urpJ9XpwOTdzBVbGvactwHrPagYQrTJPYjxfxLGkSyu7nJZVqRVGAeohnPgKMrnKE&usqp=CAU" %> width="50" height="50" alt="Blogger">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,13 +34,11 @@
         <ul class="navbar-nav mr-auto">
           <!-- Include link in navbar  -->
           <li class="<%= 'active' if current_page?(pages_home_path) %>  nav-item ">
-            <a class="nav-link" href=<%= pages_home_path%>>NewsFeed<span class="sr-only">(current)</span>
+            <a class="nav-link" href=<%= pages_home_path%>>All Post<span class="sr-only">(current)</span>
             </a>
           </li>
           
-          <li class="<%= 'active' if current_page?(pages_how_to_write_path) %> nav-item">
-            <a class="nav-link " href=<%= pages_how_to_write_path%>>How To Write A Post</a>
-          </li>
+        
           <li class="<%= 'active' if current_page?(user_index_path) %> nav-item">
             <a class="nav-link " href=<%= user_index_path%>>Members</a>
           </li>
@@ -53,7 +52,7 @@
             </li>
           <% end%>
         </ul>
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           <!-- if logined as user dropdown list item -->
           <% if user_signed_in? %>
             <li class="dropdown">
@@ -93,12 +92,7 @@
           <% end %>
         </ul>
         <!-- search blog from it's title -->
-        <%= form_tag pages_home_path+"#Blogs",class:"form-inline my-2 my-lg-0", :method => 'get' do %>
-          <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2", placeholder:"Search", :required => true %>
-          <%= button_tag(type: "submit", class: "btn btn-outline-success", :name => nil) do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        <% end %>
+       
       </div>
     </nav>
     <!-- end of nav -->
