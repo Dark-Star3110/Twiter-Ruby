@@ -34,16 +34,17 @@
         <ul class="navbar-nav mr-auto">
           <!-- Include link in navbar  -->
           <li class="<%= 'active' if current_page?(pages_home_path) %>  nav-item ">
-            <a class="nav-link" href=<%= pages_home_path%>>All Post<span class="sr-only">(current)</span>
+            <a class="nav-link" href=<%= pages_home_path%>>すべてのポスト<span class="sr-only">(current)</span>
             </a>
           </li>
           
         
           <li class="<%= 'active' if current_page?(user_index_path) %> nav-item">
-            <a class="nav-link " href=<%= user_index_path%>>Members</a>
+            <a class="nav-link " href=<%= user_index_path%>>
+メンバー</a>
           </li>
           <li class="<%= 'active' if current_page?(pages_about_path) %> nav-item">
-            <a class="nav-link" href=<%= pages_about_path%>>About</a>
+            <a class="nav-link" href=<%= pages_about_path%>>私たちについて</a>
           </li>
           <!-- login as Admin print Admin View -->
           <% if admin_signed_in? %>
@@ -60,11 +61,11 @@
                 <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" style="width:25%">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
-                  <a class="nav-link" style="color: white" href=<%= user_show_url(current_user.id)%>><i class='fab fa-blogger-b'></i> My Profile</a>
-                <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog</a>
+                  <a class="nav-link" style="color: white" href=<%= user_show_url(current_user.id)%>><i class='fab fa-blogger-b'></i>プロフィール</a>
+                <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i>自分のポスト</a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
-                  <i class="fas fa-plus"></i> Create new post</a>
-                <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
+                  <i class="fas fa-plus"></i>ポスト作成</a>
+                <%= link_to " <i class='fa fa-sign-out'></i>ログアウト".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
             </li>
           <% elsif admin_signed_in? %>
