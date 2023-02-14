@@ -77,18 +77,18 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #68243d;">
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog </a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
-                  <i class="fas fa-plus"></i> Create new post</a>
+                  <i class="fas fa-plus"></i> 新しい投稿を作成</a>
                 <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_admin_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
                </li>
           <% else %>
             <!-- if login session not set show login,Signup link -->
             <li class="nav-item active">
-              <a class="nav-link" href=<%= new_admin_session_path %>>Admin</a>
+              <a class="nav-link" href=<%= new_admin_session_path %>>管理者</a>
             </li>
-            <li class="nav-item"><a class="nav-link " href=<%= new_user_session_path %>>Login</a></li>
+            <li class="nav-item"><a class="nav-link " href=<%= new_user_session_path %>>ログイン</a></li>
             <li class="nav-item">
-              <a class="nav-link " href=<%= new_user_registration_path%>>SignUp</a>
+              <a class="nav-link " href=<%= new_user_registration_path%>>サインアップ</a>
             </li>
           <% end %>
         </ul>
@@ -123,7 +123,7 @@
   <div   class="footer">
   <!-- Navbar content -->
   <center>
-      <label style=" color:blue;"> Developed By チーム７　IT日本語３ </label>
+      <label style=" color:blue;"> チーム７　IT日本語３ によって開発された </label>
   </center>
 </div>
 </body>
