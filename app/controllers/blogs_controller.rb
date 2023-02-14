@@ -48,13 +48,8 @@ class BlogsController < ApplicationController
     respond_to do |format|
       if @blog.update(blog_params)
         # check its admin blog or another person blog and redirect to specific path
-        if  blog_params[:email ] == current_admin.email then
-          format.html { redirect_to pages_Myblogs_path, notice: 'Blog was successfully updated.' }
-          format.json { render :show, status: :ok, location: @blog }
-        else
-          format.html { redirect_to root_path, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
-        end
+        format.html { redirect_to root_path, notice: 'Blog was successfully updated.' }
+      format.json { render :show, status: :ok, location: @blog }
        
         
       else
