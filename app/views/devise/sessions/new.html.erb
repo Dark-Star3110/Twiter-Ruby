@@ -3,7 +3,7 @@
   <div class="card border-success mb-3" style="max-width: 18rem;">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <h5><%= devise_error_messages! %></h5>
-    <div class="card-header bg-transparent border-success"><b>Login</b></div>
+    <div class="card-header bg-transparent border-success"><b>ログイン</b></div>
     <div class="card-body text-success">
       <div class="form-group">
         <%= f.label :email %><br />
@@ -19,7 +19,7 @@
         <%= f.submit "Sign In", class:"btn btn-success" %>
       </center>
       <center>
-        <center>Yet Not Rgistered !!!
+        <center>まだ登録されていません!!!
           <%= render "devise/shared/links" %>
         </center>
       </center>

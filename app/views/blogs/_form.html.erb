@@ -3,7 +3,7 @@
   <% if blog.errors.any? %>
     <div id="error_explanation">
 
-      <h3><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h3>
+      <h3><%= pluralize(blog.errors.count, "error") %> このブログの保存を禁止しました:</h3>
 
       <ul>
       <% blog.errors.full_messages.each do |message| %>
@@ -14,23 +14,23 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.text_field :Title, id: :blog_Title, class:"form-control", required:"true",style:"border-radius: 25px;background-color: rgb(230,230,230);height:50px", placeholder:"Enter Tittle" %>
+    <%= form.text_field :Title, id: :blog_Title, class:"form-control", required:"true",style:"border-radius: 25px;background-color: rgb(230,230,230);height:50px", placeholder:"タイトルを入力" %>
   </div>
   <div class="form-group">
-   <%= form.text_area :Discription, id: :blog_Discription, class:"form-control" ,style:"border-radius: 25px;background-color: rgb(230,230,230);height:180px", placeholder:"Discription", minlength: 120,onchange: "discription_change()" %> 
+   <%= form.text_area :Discription, id: :blog_Discription, class:"form-control" ,style:"border-radius: 25px;background-color: rgb(230,230,230);height:180px", placeholder:"説明", minlength: 120,onchange: "discription_change()" %> 
      
   </div>
   <div class="form-group">
     <%= form.label :image %>  </div>
    <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+    <span class="input-group-text" id="inputGroupFileAddon01">アップロード</span>
   </div>
   <div class="custom-file">
     
     <%= form.file_field :image, id: :blog_image, class:"custom-file-input", required:"true", accept:"image/*",oninput: "filename()" %>
 
-    <label class="custom-file-label" for="blog_image" id="image_label">Choose file</label>
+    <label class="custom-file-label" for="blog_image" id="image_label">ファイルを選ぶ</label>
   </div>
   
 </div>

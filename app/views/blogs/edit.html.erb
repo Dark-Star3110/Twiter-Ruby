@@ -4,13 +4,12 @@
     <div style="float: left">
       <img id="loading" src=<%= image_path "edit.png" %> height="50px" >
     </div>
-    <div style="float: left"><h1>Editing Blog</h1></div>
+    <div style="float: left"><h1>ブログを編集</h1></div>
     <%= form_with(model: @blog, local: true,:html => { :onsubmit => "return
     submitForm()" }) do |form| %> <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@blog.errors.count, "error") %> prohibited this blog from
-        being saved:
+        <%= pluralize(@blog.errors.count, "error") %> このブログの保存を禁止しました:
       </h2>
 
       <ul>
@@ -35,16 +34,16 @@
     <div class="form-group"><%= form.label :image %></div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        <span class="input-group-text" id="inputGroupFileAddon01">アップロード</span>
       </div>
       <div class="custom-file">
         <%= form.file_field :image, id: :blog_image, class:"custom-file-input",
         accept:"image/*" %>
-        <label class="custom-file-label" for="blog_image">Choose file</label>
+        <label class="custom-file-label" for="blog_image">ファイルを選ぶ</label>
       </div>
     </div>
     <label style="color: red"
-      >If You not Select An image previous image is as it is display</label
+      >画像を選択しない場合 前の画像がそのまま表示されます</label
     >
 
     <!-- set default user login email to email field -->
