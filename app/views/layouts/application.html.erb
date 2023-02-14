@@ -47,11 +47,6 @@
             <a class="nav-link" href=<%= pages_about_path%>>私たちについて</a>
           </li>
           <!-- login as Admin print Admin View -->
-          <% if admin_signed_in? %>
-            <li class="nav-item">
-              <marquee class="nav-link" style="color:white" >   管理者  </marquee>
-            </li>
-          <% end%>
         </ul>
         <ul class="navbar-nav ml-auto">
           <!-- if logined as user dropdown list item -->
@@ -83,9 +78,6 @@
                </li>
           <% else %>
             <!-- if login session not set show login,Signup link -->
-            <li class="nav-item active">
-              <a class="nav-link" href=<%= new_admin_session_path %>>管理者</a>
-            </li>
             <li class="nav-item"><a class="nav-link " href=<%= new_user_session_path %>>ログイン</a></li>
             <li class="nav-item">
               <a class="nav-link " href=<%= new_user_registration_path%>>サインアップ</a>
@@ -121,10 +113,51 @@
   </div>
 </div>
   <div   class="footer">
-  <!-- Navbar content -->
-  <center>
-      <label style=" color:blue;"> チーム７　IT日本語３ によって開発された </label>
-  </center>
+ <footer>
+  <div class="social">
+    <p>ソーシャル メディアでフォローする</p>
+    <ul class="wrapper">
+      <a href="#" target="_blank">
+        <li class="icon linkedin">
+          <span class="tooltip">LinkedIn</span>
+          <span><i class="fab fa-linkedin"></i></span>
+        </li>
+      </a>
+      <a href="#" target="_blank">
+        <li class="icon github">
+          <span class="tooltip">GitHub</span>
+          <span><i class="fab fa-github"></i></span>
+        </li>
+      </a>
+      <a href="#" target="_blank">
+        <li class="icon facebook">
+          <span class="tooltip">Facebook</span>
+          <span><i class="fab fa-facebook-f"></i></span>
+        </li>
+      </a>
+      <a href="#" target="_blank">
+        <li class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+      </a>
+      <a href="#" target="_blank">
+        <li class="icon twitter">
+          <span class="tooltip">Twitter</span>
+          <span><i class="fab fa-twitter"></i></span>
+        </li>
+      </a>
+      <a href="#" target="_blank">
+        <li class="icon github">
+          <span class="tooltip">CodePen</span>
+          <span><i class="fab fa-codepen"></i></span>
+        </li>
+      </a>
+    </ul>
+  </div>
+  <div class="final_text"></div>
+  <p>チーム７　IT日本語３ によって開発された</p>
+</footer>
 </div>
 </body>
 </html>
