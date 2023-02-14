@@ -60,7 +60,7 @@
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i>自分のポスト</a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
                   <i class="fas fa-plus"></i>ポスト作成</a>
-                <%= link_to " <i class='fa fa-sign-out'></i>ログアウト".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
+                <%= link_to " <i class='fa fa-sign-out'></i>サインアウト".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
             </li>
           <% elsif admin_signed_in? %>
