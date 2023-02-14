@@ -4,12 +4,12 @@
     <div style="float: left">
       <img id="loading" src=<%= image_path "edit.png" %> height="50px" >
     </div>
-    <div style="float: left"><h1>ブログを編集</h1></div>
+    <div style="float: left"><h1>ポストを編集</h1></div>
     <%= form_with(model: @blog, local: true,:html => { :onsubmit => "return
     submitForm()" }) do |form| %> <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@blog.errors.count, "error") %> このブログの保存を禁止しました:
+        <%= pluralize(@blog.errors.count, "error") %> このポストの保存を禁止しました:
       </h2>
 
       <ul>

@@ -4,7 +4,7 @@
   <% if user_signed_in? %>
    <!-- if blog is present print state -->
   <% if @blogs.where(email: current_user.email).count > 0 %>
-  <h1>あなたの投稿</h1>
+  <h1>あなたのポスト</h1>
   <%else %>
   <center>
     <div class="card" style="width: 18rem; margin-top:100px;">
@@ -35,8 +35,8 @@
            <center> <a href=<%= blog_path(blog)  %>>
               </center><button class='badge badge-pill badge-info' style="font-size: 15px; background-color:red">もっと読む</button></a></center>
                <div style="margin-top:40px;">
-                    <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-primary" %>
-                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+                    <%= link_to '編集', edit_blog_path(blog), class:"btn btn-primary" %>
+                    <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
                 </div>
           </div>
         </div>
@@ -75,8 +75,8 @@
             </p>
             <p class="card-text"></p>
             <center> <a href=<%= blog_path(blog) %>><button class='badge badge-pill badge-info' style="font-size: 15px;background-color:red">もっと読む</button></a>
-              <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-primary" %>
-              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+              <%= link_to '編集', edit_blog_path(blog), class:"btn btn-primary" %>
+              <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
               <br>
               <br>
             </center>
