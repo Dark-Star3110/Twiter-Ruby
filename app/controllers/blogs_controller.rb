@@ -32,7 +32,7 @@ class BlogsController < ApplicationController
     respond_to do |format|
       if @blog.save
           
-        format.html { redirect_to pages_Myblogs_path, notice: blog_params[:Title ].to_s + 'Blog was successfully created.'}
+        format.html { redirect_to pages_Myblogs_path, notice: blog_params[:Title ].to_s + 'Post was successfully created.'}
         format.json { render :show, status: :created, location: pages_Myblogs_path }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class BlogsController < ApplicationController
     respond_to do |format|
       if @blog.update(blog_params)
         # check its admin blog or another person blog and redirect to specific path
-        format.html { redirect_to root_path, notice: 'Blog was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
       format.json { render :show, status: :ok, location: @blog }
        
         
@@ -68,10 +68,10 @@ class BlogsController < ApplicationController
         # if request.headers["HTTP_REFERER"] == "http://localhost:3000/Blog"
         # check the working page and redirect to specific page after deleting blog
         if request.headers["HTTP_REFERER"] == "http://localhost:3000/pages/Myblogs"
-         format.html { redirect_to pages_Myblogs_path, notice:   'Blog was successfully destroyed.' }
+         format.html { redirect_to pages_Myblogs_path, notice:   'Post was successfully destroyed.' }
          format.json { head :no_content }
        else
-          format.html { redirect_to root_path, notice:   'Blog was successfully destroyed.' }
+          format.html { redirect_to root_path, notice:   'Post was successfully destroyed.' }
           format.json { head :no_content }
         end
     end
