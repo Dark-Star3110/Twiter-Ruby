@@ -4,7 +4,7 @@
 <!--- End slider --->
 <hr/>
 <div style="text-align: center;">
-  <h1 style="font-family: billabong">すべての投稿</h1>
+  <h1 style="font-family: billabong">すべてのポスト</h1>
 </div>
 <hr/>
 <!--- strat blogs --->
@@ -24,7 +24,7 @@
                 <%= ActionView::Base.full_sanitizer.sanitize(blog.Discription).truncate_words(30)%> </p>
             </div>
             <div class="card-footer">
-              <%= link_to "<span class='badge badge-pill badge-info'style=' background-color:red'>Read More</span>".html_safe,  blog %> <br>
+              <%= link_to "<span class='badge badge-pill badge-info'style=' background-color:red'>もっと読む</span>".html_safe,  blog %> <br>
               <small class="text-muted">アップロード者<%= blog.email %><br>
               最終更新 <%= blog.updated_at.strftime("%d-%m-%Y") %>
               </small>
@@ -48,7 +48,7 @@
               <p class="card-text"> <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(30)%></p>
             </div>
             <div class="card-footer">
-              <%= link_to "<span class='badge badge-pill badge-info'>Read More</span>".html_safe,  blog %> <br>
+              <%= link_to "<span class='badge badge-pill badge-info'>もっと読む</span>".html_safe,  blog %> <br>
               <small class="text-muted">アップロード者<%= blog.email %><br>
               最終更新 <%= blog.updated_at.strftime("%d-%m-%Y") %>
               </small>
@@ -69,7 +69,7 @@
               <p class="card-text">  <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(30)%> </p>
             </div>
             <div class="card-footer">
-              <%= link_to "<span class='badge badge-pill badge-info'style='background-color:red'>Read More</span>".html_safe,  blog %> <br>
+              <%= link_to "<span class='badge badge-pill badge-info'style='background-color:red'>もっと読む</span>".html_safe,  blog %> <br>
               <small class="text-muted">投稿者 <%= blog.email %><br>
               最終更新 <%= blog.updated_at.strftime("%d-%m-%Y") %>
               </small>

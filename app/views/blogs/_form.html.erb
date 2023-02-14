@@ -3,7 +3,7 @@
   <% if blog.errors.any? %>
     <div id="error_explanation">
 
-      <h3><%= pluralize(blog.errors.count, "error") %> このブログの保存を禁止しました:</h3>
+      <h3><%= pluralize(blog.errors.count, "error") %> このポストの保存を禁止しました:</h3>
 
       <ul>
       <% blog.errors.full_messages.each do |message| %>
