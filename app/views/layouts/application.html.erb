@@ -51,9 +51,9 @@
         <ul class="navbar-nav ml-auto">
           <!-- if logined as user dropdown list item -->
           <% if user_signed_in? %>
-            <li class="dropdown">
+            <li class="dropdown" style="margin-right:80px;">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" style="width:25%">
+                 <img src=<%= current_user.avatar %> alt="Third slide"  style="width:36px; height:36px;border-radius:50%">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                   <a class="nav-link" style="color: white" href=<%= user_show_url(current_user.id)%>><i class='fab fa-blogger-b'></i>プロフィール</a>
@@ -67,7 +67,7 @@
             <!-- if logined as Admin dropdown list item -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-0" style="width:25%" src=<%= image_path "uinfo.png" %> alt="Third slide" >
+                <img src=<%= current_user.avatar %> alt="Third slide"  style="width:36px; height:36px;border-radius:50%">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #68243d;">
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog </a>

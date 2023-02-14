@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :checkAdmin, only: [:edit,:destroy]
+#   before_action :checkAdmin, only: [:edit,:destroy]
 
   # GET /blogs
   # GET /blogs.json
